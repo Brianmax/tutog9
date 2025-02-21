@@ -6,4 +6,5 @@ import org.example.tutog9.response.AutorResponse;
 
 public interface AutorService {
     AutorResponse createAutor(AutorRequest autorRequest);
+    AutorResponse findById(int id);
 }

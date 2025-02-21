@@ -1,14 +1,13 @@
 package org.example.tutog9.controller;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import org.example.tutog9.repository.AutorRepository;
 import org.example.tutog9.request.AutorRequest;
 import org.example.tutog9.response.AutorResponse;
 import org.example.tutog9.service.AutorService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.data.repository.query.Param;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/autor")
@@ -20,5 +19,10 @@ public class AutorController {
     @PostMapping
     public AutorResponse createAutor(@RequestBody AutorRequest autorRequest) {
         return autorService.createAutor(autorRequest);
+    }
+    
+    @GetMapping("/find/{id}")
+    public AutorResponse findById(@PathVariable int id) {
+        return autorService.findById(id);
     }
 }

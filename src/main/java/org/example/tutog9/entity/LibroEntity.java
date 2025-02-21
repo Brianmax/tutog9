@@ -31,4 +31,10 @@ public class LibroEntity {
     @ManyToOne
     @JoinColumn(name = "editorial_id_fk")
     private EditorialEntity editorialEntity;
+    
+    // tarea:
+    // crear el codigo necesario para poder agregar un libro
+    // con su respectivo autor y editorial
+    // ademas cuando se agregue un libro a un autor
+    // el atributo numLibros de autor entity debe de actualizarse
 }
